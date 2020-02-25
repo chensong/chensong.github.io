@@ -1,12 +1,16 @@
 ---
 layout: post
-title: scoop, chocolatey 包管理工具
+title: chocolatey 包管理工具
 categories: [Blog, scoop, chocolatey]
 description: 包管理工具
 keywords: chocolatey
 ---
 
 ## chocolatey
+
+```
+比较适合安装一下 GUI 软件
+```
 
 ### 1、配置安装目录
 
