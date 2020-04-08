@@ -47,7 +47,7 @@ network:
 ```
 :set paste
 
-进入paste模式之后，再按i进入插入模式，进行复制、粘贴就很正常了。
+进入 paste 模式之后，再按 i 进入插入模式，进行复制、粘贴就很正常了。
 ```
 
 ### 命令模式下，输入
@@ -55,10 +55,10 @@ network:
 ```
 :set nopaste
 
-解除paste模式。
+解除 paste 模式。
 ```
 
-### paste模式主要帮我们做了如下事情：
+### paste 模式主要帮我们做了如下事情：
 
 * textwidth设置为0
 * wrapmargin设置为0
