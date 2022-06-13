@@ -7,6 +7,7 @@ keywords: openwrt, openvpn
 ---
 
 ## 1、安装
+
 ```sh
 # Install packages
 # 也可在 web ui 安装： 系统 > Software
@@ -17,6 +18,7 @@ opkg install openvpn-openssl openvpn-easy-rsa luci-i18n-openvpn-zh-cn
 ## 2、配置 Server
 
 1. 生成证书
+
     ```sh
     mkdir -p /etc/openvpn
     cd /etc/openvpn
@@ -51,17 +53,22 @@ opkg install openvpn-openssl openvpn-easy-rsa luci-i18n-openvpn-zh-cn
 1. 添加端口 option port '1194'
 1. 添加协议 option proto 'tcp-server'
 1. openvpn 网络模式，默认是 net30：表示掩码30位，有地址浪费，还有 P2P 模式，当然还有 subnet 这是比较推荐的
-    ```
+
+    ```conf
     option topology 'subnet'
     option push 'topology subnet'
     ```
+
 1. 添加静态 IP 分配文件 option ifconfig_pool_persist '/etc/openvpn/ipp.txt'
+
     ```sh
     # 文件格式
     client1,10.0.100.10
     client2,10.0.100.20
     ```
+
 1. 或者添加静态 IP 分配文件目录 option client_config_dir '/etc/openvpn/ccd'
+
     ```sh
     # 文件格式，每个客户端一个文件，文件名使用 CN 值，例如 
     # ccd/client1
@@ -69,8 +76,10 @@ opkg install openvpn-openssl openvpn-easy-rsa luci-i18n-openvpn-zh-cn
     # ccd/client2
     ifconfig-push 10.0.100.30 10.0.100.29
     ```
+
 1. 配置样例 /etc/config/openvpn
-    ```
+
+    ```conf
     config openvpn 'server_multi_client'
             option dev 'tun'
             option comp_lzo 'yes'
@@ -107,7 +116,7 @@ opkg install openvpn-openssl openvpn-easy-rsa luci-i18n-openvpn-zh-cn
 
 ## 2、配置 Client
 
-```
+```conf
 client
 dev tun
 ;dev-node "client1"
@@ -149,6 +158,7 @@ verb 3
 ## 3、详细配置书面
 
 ### 3.1 server 端配置
+
 ```sh
 #使用那种协议，可选的有，udp tcp-server tcp-client
     proto udp  
@@ -228,6 +238,7 @@ verb 3
 ```
 
 CCD配置文件语法，CCD能对客户端进行细粒度控制
+
 ```sh
     ifconfig-push    ：向客户端推送虚拟IP地址，它将会覆盖掉 --config-pool 的动态分配地址
     local

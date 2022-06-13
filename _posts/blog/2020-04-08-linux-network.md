@@ -42,9 +42,9 @@ network:
 
 ## vim 复制粘贴格式错乱
 
-### vim进入 paste 模式，命令如下：
+### vim进入 paste 模式，命令如下
 
-```
+```txt
 :set paste
 
 进入 paste 模式之后，再按 i 进入插入模式，进行复制、粘贴就很正常了。
@@ -52,13 +52,13 @@ network:
 
 ### 命令模式下，输入
 
-```
+```txt
 :set nopaste
 
 解除 paste 模式。
 ```
 
-### paste 模式主要帮我们做了如下事情：
+### paste 模式主要帮我们做了如下事情
 
 * textwidth设置为0
 * wrapmargin设置为0

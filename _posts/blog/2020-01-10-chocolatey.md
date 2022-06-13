@@ -8,7 +8,7 @@ keywords: chocolatey
 
 ## chocolatey
 
-```
+```txt
 比较适合安装一下 GUI 软件
 ```
 
